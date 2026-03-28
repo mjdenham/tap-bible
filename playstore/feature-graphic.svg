@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a6e"/>
+      <stop offset="65%" stop-color="#12121f"/>
+    </linearGradient>
+    <linearGradient id="iconBg" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#4A90D9"/>
+      <stop offset="100%" stop-color="#284777"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <!-- Decorative glow circle behind icon -->
+  <circle cx="262" cy="250" r="160" fill="#4A90D9" opacity="0.08"/>
+
+  <!-- App icon: rounded rect + embedded icon image -->
+  <g transform="translate(162, 150)">
+    <rect width="200" height="200" rx="44" fill="url(#iconBg)"/>
+    <image href="app-icon-512.png" x="0" y="0" width="200" height="200"/>
+  </g>
+
+  <!-- App name -->
+  <text
+    x="430" y="222"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="88"
+    font-weight="700"
+    letter-spacing="-2"
+    fill="#ffffff">Tap Bible</text>
+
+  <!-- Tagline -->
+  <text
+    x="432" y="290"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-size="32"
+    font-weight="400"
+    fill="#AAC7FF"
+    opacity="0.9">Your Bible. Beautifully simple.</text>
+</svg>

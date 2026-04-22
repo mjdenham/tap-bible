@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release Notes — Tap Bible</title>
+  <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #AAC7FF;
+      --dark:   #1a1a2e;
+      --darker: #12121f;
+      --card:   #22223a;
+      --text:   #e8e8f0;
+      --muted:  #9090b0;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(160deg, #284777 0%, var(--darker) 60%);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    header a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    header a:hover { text-decoration: underline; }
+
+    header img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(74,144,217,0.3);
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+    }
+
+    header h1 span { color: var(--blue); }
+
+    header p.subtitle {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .release-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid #2e2e4e;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 28px;
+    }
+
+    .release-version {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .release-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
+    .release-notes ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .release-notes ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .release-notes ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid #2e2e4e;
+    }
+
+    footer a { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">&#8592; Tap Bible</a>
+  <img src="app-icon.svg" alt="Tap Bible icon" />
+  <h1>Tap <span>Bible</span> Release Notes</h1>
+  <p class="subtitle">What's changed in each version</p>
+</header>
+
+<main>
+
+  <div class="release-item">
+    <div>
+      <div class="release-version">v0.4.1</div>
+      <div class="release-date">Apr 2026</div>
+    </div>
+    <div class="release-notes">
+      <ul>
+        <li>Polished dialog animations on iOS — entry and exit transitions now work correctly</li>
+        <li>Fixed back-handler registration so hardware/gesture back works in all screens</li>
+        <li>Migrated all dialogs and bottom sheets to a unified dialog framework</li>
+        <li>Fixed occasional incorrect initial scroll position on iOS when dark mode is active</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release-item">
+    <div>
+      <div class="release-version">v0.4.0</div>
+      <div class="release-date">Mar 2026</div>
+    </div>
+    <div class="release-notes">
+      <ul>
+        <li>Launched on the iOS App Store</li>
+        <li>Added translations for multiple languages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release-item">
+    <div>
+      <div class="release-version">v0.3.0</div>
+      <div class="release-date">Feb 2026</div>
+    </div>
+    <div class="release-notes">
+      <ul>
+        <li>Animated splash screen on Android</li>
+        <li>Fixed back navigation in the book/chapter navigator</li>
+        <li>Search: close keyboard on submit, show "No Results" when empty, tidier history layout</li>
+        <li>Refreshed colour palette for better readability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release-item">
+    <div>
+      <div class="release-version">v0.2.0</div>
+      <div class="release-date">Jan 2026</div>
+    </div>
+    <div class="release-notes">
+      <ul>
+        <li>Fixed TSK ThML parsing and commentary navigation for missing verses</li>
+        <li>Excluded duplicate eBible entries from the catalog</li>
+        <li>Language names now shown instead of language codes</li>
+        <li>More robust document downloads</li>
+        <li>Dark mode highlight and popup link colours improved</li>
+        <li>Various dialog animation and border colour fixes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release-item">
+    <div>
+      <div class="release-version">v0.1.0</div>
+      <div class="release-date">Dec 2025</div>
+    </div>
+    <div class="release-notes">
+      <ul>
+        <li>Initial release on Google Play</li>
+        <li>Bible reading with multiple tabs and translations</li>
+        <li>Full-text search, bookmarks, and commentaries</li>
+        <li>Hundreds of languages via CrossWire and eBible catalogs</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Martin Denham &mdash; <a href="index.html">Tap Bible</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help — Tap Bible</title>
+  <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #AAC7FF;
+      --dark:   #1a1a2e;
+      --darker: #12121f;
+      --card:   #22223a;
+      --text:   #e8e8f0;
+      --muted:  #9090b0;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--darker);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(160deg, #284777 0%, var(--darker) 60%);
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+
+    header a.back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    header a.back:hover { text-decoration: underline; }
+
+    header img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(74,144,217,0.3);
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+    }
+
+    header h1 span { color: var(--blue); }
+
+    header p.subtitle {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid #2e2e4e;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+
+    .toc h2 {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc ol li {
+      font-size: 0.9rem;
+      padding: 3px 0;
+    }
+
+    .toc a { color: var(--text); text-decoration: none; }
+    .toc a:hover { color: var(--blue); }
+
+    .help-section {
+      background: var(--card);
+      border: 1px solid #2e2e4e;
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .help-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .help-section p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .help-section p:last-child { margin-bottom: 0; }
+
+    .help-section ul, .help-section ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .help-section li {
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 3px 0;
+    }
+
+    .help-section li:last-child { margin-bottom: 0; }
+
+    .tip {
+      background: rgba(170, 199, 255, 0.07);
+      border: 1px solid rgba(170, 199, 255, 0.2);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: var(--blue);
+      margin-top: 12px;
+    }
+
+    .tip strong { font-weight: 600; }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid #2e2e4e;
+    }
+
+    footer a { color: var(--blue); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">&#8592; Tap Bible</a>
+  <img src="app-icon.svg" alt="Tap Bible icon" />
+  <h1>Tap <span>Bible</span> Help</h1>
+  <p class="subtitle">Getting started and basic usage</p>
+</header>
+
+<main>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#reading">Reading the Bible</a></li>
+      <li><a href="#navigate">Navigating Books &amp; Chapters</a></li>
+      <li><a href="#tabs">Using Tabs</a></li>
+      <li><a href="#downloads">Downloading Bibles &amp; Commentaries</a></li>
+      <li><a href="#search">Search</a></li>
+      <li><a href="#bookmarks">Bookmarks</a></li>
+      <li><a href="#verse-popup">Verse Popup &amp; Strong's Numbers</a></li>
+    </ol>
+  </nav>
+
+  <section class="help-section" id="reading">
+    <h2>📖 Reading the Bible</h2>
+    <p>When you open Tap Bible you land directly in the reader. Text is displayed verse by verse for easy reading. Scroll continuously through the text — previous and next chapters flow in seamlessly as you scroll up or down, in both Bible and commentary documents. Use the navigator at the top to jump anywhere in the Bible.</p>
+    <p>The app remembers your position, and all tabs are synchronised — navigating to a new passage in one tab moves all tabs to the same location.</p>
+  </section>
+
+  <section class="help-section" id="navigate">
+    <h2>🧭 Navigating Books &amp; Chapters</h2>
+    <p>Tap the book/chapter reference shown at the top of the screen to open the navigator. From there:</p>
+    <ul>
+      <li>Select a <strong>book</strong> from the list — Old or New Testament sections are shown separately</li>
+      <li>Then pick a <strong>chapter</strong> from the grid</li>
+    </ul>
+    <p>Press Back to close the navigator without changing your position.</p>
+  </section>
+
+  <section class="help-section" id="tabs">
+    <h2>🗂 Using Tabs</h2>
+    <p>Tabs let you keep multiple documents open at the same time — for example, two different Bible translations, or a Bible alongside a commentary.</p>
+    <ul>
+      <li>Tap the <strong>tab bar</strong> at the bottom to switch between open tabs</li>
+      <li>Use the <strong>tab edit button</strong> (pencil icon) to add, remove, or reorder tabs</li>
+      <li>All tabs stay synchronised — switching tabs shows the same passage in each document</li>
+    </ul>
+    <div class="tip"><strong>Tip:</strong> At least one tab must remain open — the app prevents you from removing the last tab.</div>
+  </section>
+
+  <section class="help-section" id="downloads">
+    <h2>⬇️ Downloading Bibles &amp; Commentaries</h2>
+    <p>Tap Bible uses free modules from the CrossWire and eBible catalogs — there are hundreds of Bible translations and commentaries available across most languages.</p>
+    <ol>
+      <li>Open the <strong>catalog</strong> from the tab edit screen or the navigation menu</li>
+      <li>Browse or filter by language</li>
+      <li>Tap a document to download it</li>
+      <li>Once downloaded, it is available offline</li>
+    </ol>
+    <div class="tip"><strong>Tip:</strong> Downloads require an internet connection but the documents themselves work fully offline once downloaded.</div>
+  </section>
+
+  <section class="help-section" id="search">
+    <h2>🔍 Search</h2>
+    <p>Full-text search is available for any downloaded Bible translation or commentary.</p>
+    <ul>
+      <li>Open search from the toolbar or navigation menu</li>
+      <li>Type a word or phrase and tap the search key (or press Enter) to run the search</li>
+      <li>Results show the verse reference and a snippet — tap any result to jump to it</li>
+      <li>Previous searches are saved in a history list below the search box</li>
+    </ul>
+    <p>Search is scoped to the translation in the current tab.</p>
+  </section>
+
+  <section class="help-section" id="bookmarks">
+    <h2>🔖 Bookmarks</h2>
+    <p>Save any verse or passage with a bookmark so you can return to it later.</p>
+    <ul>
+      <li>Long-press a verse to select it, then tap the bookmark icon</li>
+      <li>When a verse is bookmarked the icon appears filled — tap it again to remove the bookmark</li>
+      <li>View all bookmarks from the navigation menu</li>
+      <li>Tap a bookmark to jump straight to that verse</li>
+    </ul>
+    <p>Bookmarks are stored locally on your device and are never sent anywhere.</p>
+  </section>
+
+  <section class="help-section" id="verse-popup">
+    <h2>🔤 Verse Popup &amp; Strong's Numbers</h2>
+    <p>Long-press anywhere in the text to open the word and verse popup. This shows the tapped word and the full verse, and for translations that support it, the <strong>Strong's concordance number</strong> for the word you pressed.</p>
+    <p>Strong's numbers let you look up the original Hebrew or Greek word behind the translation — useful for deeper word studies.</p>
+    <div class="tip"><strong>Tip:</strong> Not all translations include Strong's data. Look for translations labelled with Strong's support in the catalog.</div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Martin Denham &mdash; <a href="index.html">Tap Bible</a></p>
+</footer>
+
+</body>
+</html>

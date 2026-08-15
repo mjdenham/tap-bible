@@ -93,6 +93,25 @@
 
     .badge svg { width: 22px; height: 22px; flex-shrink: 0; }
 
+    .hero-verse {
+      margin: -4px auto 24px;
+      max-width: 560px;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--blue);
+      opacity: 0.75;
+    }
+
+    .hero-verse cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      font-style: normal;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
     /* ── NAV ── */
     .site-nav {
       display: flex;
@@ -147,7 +166,6 @@
     .demo-section {
       padding: 60px 24px;
       text-align: center;
-      background: var(--dark);
     }
 
     .section-label {
@@ -188,6 +206,7 @@
     .screenshots-section {
       padding: 60px 24px;
       text-align: center;
+      background: var(--dark);
     }
 
     .screenshots-section h2 {
@@ -344,6 +363,10 @@
 <section class="hero">
   <img class="app-icon" src="app-icon.svg" alt="Tap Bible icon" />
   <h1>Tap <span>Bible</span></h1>
+  <p class="hero-verse">
+    With joy you will draw water from the springs of salvation
+    <cite>Isaiah 12:3</cite>
+  </p>
   <p class="tagline">A beautiful, fast Bible app — available now on Android and iOS. Bibles in hundreds of languages, built with Kotlin Multiplatform.</p>
   <div class="badges">
     <a class="badge badge-android" href="https://play.google.com/store/apps/details?id=app.tap.bible" target="_blank" rel="noopener">
@@ -357,27 +380,9 @@
   </div>
 </section>
 
-<!-- DEMO VIDEO -->
-<section class="demo-section">
-  <p class="section-label">See it in action</p>
-  <h2>iPhone & Android, side by side</h2>
-  <div class="videos-row">
-    <div class="video-wrapper">
-      <video controls preload="metadata">
-        <source src="videos/iOSVideo.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video controls preload="metadata">
-        <source src="videos/AndroidVideo.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-</section>
-
 <!-- SCREENSHOTS -->
 <section class="screenshots-section">
-  <p class="section-label">Screenshots</p>
+  <p class="section-label">At a glance</p>
   <h2>Clean, focused reading experience</h2>
   <div class="screenshots-grid">
     <img src="images/John3.png" alt="Bible reader - Verse-by-verse display" />
@@ -385,6 +390,24 @@
     <img src="images/Search.png" alt="Search - Full-text search across translations" />
     <img src="images/Bookmarks.png" alt="Bookmarks - Save &amp; organise favourite verses" />
     <img src="images/Strongs.png" alt="Strong's numbers and verse popup" />
+  </div>
+</section>
+
+<!-- DEMO VIDEO -->
+<section class="demo-section">
+  <p class="section-label">See it in action</p>
+  <h2>iPhone & Android, side by side</h2>
+  <div class="videos-row">
+    <div class="video-wrapper">
+      <video controls autoplay muted playsinline preload="auto">
+        <source src="videos/iOSVideo.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video controls autoplay muted playsinline preload="auto">
+        <source src="videos/AndroidVideo.mp4" type="video/mp4" />
+      </video>
+    </div>
   </div>
 </section>
 
@@ -450,6 +473,32 @@
     <a href="privacy-policy.html">Privacy Policy</a>
   </p>
 </footer>
+
+<script>
+  // Start both demos from the beginning, and loop them together so they stay in step.
+  (function () {
+    var vids = Array.prototype.slice.call(document.querySelectorAll('.videos-row video'));
+    if (!vids.length) return;
+
+    function restart() {
+      vids.forEach(function (v) { v.currentTime = 0; var p = v.play(); if (p) p.catch(function () {}); });
+    }
+
+    window.addEventListener('pageshow', restart);
+
+    var pending = vids.length;
+    vids.forEach(function (v) {
+      function ready() { if (--pending === 0) armLoop(); }
+      if (v.readyState >= 1) ready();
+      else v.addEventListener('loadedmetadata', ready, { once: true });
+    });
+
+    function armLoop() {
+      var longest = vids.reduce(function (a, b) { return a.duration > b.duration ? a : b; });
+      longest.addEventListener('ended', restart);
+    }
+  })();
+</script>
 
 </body>
 </html>
